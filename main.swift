@@ -169,10 +169,10 @@ class hotelReserve {
             self.reservationScreen()
         case "4":
             self.reservationInfoScreen()
-            self.inputs.getNothingButCheck()
-            firstScreenLoop()
         case "5":
             self.reservationInfoOrderScreen()
+            self.inputs.getNothingButCheck()
+            firstScreenLoop()
         case "6":
             self.reservationInfoScreen(isD: true)
         case "7":
@@ -181,7 +181,8 @@ class hotelReserve {
             self.moneyLogPrint()
         case "9":
             self.cashAmountCheck()
-            
+            self.inputs.getNothingButCheck()
+            firstScreenLoop()
         case "0":
             break
         default:
@@ -352,7 +353,7 @@ class hotelReserve {
         if self.reservedRoomList.isEmpty == false {
             print("\n 체크인 날짜 순으로 정렬\n")
             for i in self.reservedRoomList.sorted(by: {$0.1[1] < $1.1[1]}) {
-                print(" \(i.0)번 방, \(i.1[1])부터 \(i.1[2])까지 예약됨")
+                print(" \(i.0)번 방, \(i.1[1])개월 후 \(i.1[2])일동안 숙박 예약됨")
             }
         }else{
             print("\n 예약 목록이 없습니다.")
@@ -378,6 +379,3 @@ program.run()
 
 
 print("프로그램 종료")
-
-
-
